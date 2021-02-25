@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #3c484e;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.App {
+  grid-template-columns: minmax(auto, 976px);
+  display: grid;
+  justify-content: center;
+}

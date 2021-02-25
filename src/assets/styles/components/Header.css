@@ -1,0 +1,11 @@
+.Header-main {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header-main a {
+  text-decoration: none;
+  color: #15302c;
+}
