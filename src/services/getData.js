@@ -1,15 +1,14 @@
-const apiURL = "https://rickandmortyapi.com/api/character/";
+const apiURL = 'https://rickandmortyapi.com/api/character/';
 
-function getData() {
-  return fetch(apiURL)
+function getData(keyword = '') {
+  if (isNaN(Number(keyword)) || keyword === 0) {
+    return Promise.resolve({ ok: false });
+  }
+  return fetch(`${apiURL}${keyword}`)
     .then(res => res.json())
-    .then(response => {
-      const { results } = response;
-      const characters = results.map(results => {
-        const { id, name, status, species, gender, image } = results;
-        return { id, name, status, species, gender, image };
-      });
-      return characters;
+    .then(responseJson => {
+      const response = keyword !== '' ? responseJson : responseJson.results;
+      return { ok: true, response };
     });
 }
 

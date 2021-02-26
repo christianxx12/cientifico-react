@@ -6,13 +6,18 @@
   padding: 0;
 }
 
+.wrapper {
+  max-width: 1000px;
+}
+
 body {
+  padding: 20px;
   background-color: #f4f4f4;
   color: #3c484e;
   font-family: 'Open Sans', sans-serif;
 }
 
-.App {
+.Home {
   grid-template-columns: minmax(auto, 976px);
   display: grid;
   justify-content: center;

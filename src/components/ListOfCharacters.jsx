@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import getData from '../services/getData';
 
 import '../assets/styles/components/Characters.css';
 
 function ListOfCharacters() {
-  const [characters, setCharacter] = useState([]);
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    getData().then(characters => setCharacter(characters));
+    getData().then(fetchCharacters => setCharacters(fetchCharacters.response));
   }, []);
 
   return characters.map(singleCharacter => (
     <article className="Characters-item" key={singleCharacter.id}>
-      <a href={singleCharacter.id}>
+      <Link to={`/${singleCharacter.id}`}>
         <img src={singleCharacter.image} alt={singleCharacter.name} />
         <h2>{singleCharacter.name}</h2>
-      </a>
+      </Link>
     </article>
   ));
 }
