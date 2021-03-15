@@ -8,7 +8,9 @@ function ListOfCharacters() {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    getData().then(fetchCharacters => setCharacters(fetchCharacters.response));
+    getData().then(fetchCharacters => {
+      setCharacters(fetchCharacters.response);
+    });
   }, []);
 
   return characters.map(singleCharacter => (
