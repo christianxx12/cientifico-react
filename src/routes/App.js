@@ -1,7 +1,7 @@
-import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Home from '../containers/Home';
-import SingleCharacter from '../containers/SingleCharacter';
+import React from "react"
+import { BrowserRouter, Route } from "react-router-dom"
+import Home from "../containers/Home"
+import SingleCharacter from "../containers/SingleCharacter"
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Route exact path="/:id" component={SingleCharacter} />
       </BrowserRouter>
     </React.Fragment>
-  );
+  )
 }
 
-export default App;
+export default App

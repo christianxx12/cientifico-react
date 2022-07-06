@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import Header from '../components/Header';
-import getData from '../services/getData';
+import React, { useState, useEffect } from "react"
+import Header from "../components/Header"
+import getData from "../services/getData"
+import Loading from "../components/Loading"
 
-import '../assets/styles/components/SingleCharacter.css';
+import "../assets/styles/components/SingleCharacter.css"
 
 function SingleCharacter(props) {
-  const id = props.match.params.id;
+  const id = props.match.params.id
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([])
 
   useEffect(() => {
-    getData(id).then(result => {
-      setData(result.response);
-    });
-  }, [id]);
+    getData(id).then((result) => {
+      setData(result.response)
+    })
+  }, [id])
 
-  console.log(data);
+  console.log(data)
 
   return data.length === 0 ? (
-    <h1>Loading...</h1>
+    <Loading />
   ) : (
     <React.Fragment>
       <Header />
@@ -49,7 +50,7 @@ function SingleCharacter(props) {
         </article>
       </div>
     </React.Fragment>
-  );
+  )
 }
 
-export default SingleCharacter;
+export default SingleCharacter
